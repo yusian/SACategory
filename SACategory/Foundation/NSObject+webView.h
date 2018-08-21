@@ -1,5 +1,5 @@
 //
-//  NSObject+webView.h
+//  NSObject+WebView.h
 //  SACategory
 //
 //  Created by 余西安 on 2018/8/20.
@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (webView)
+@interface NSObject (WebView)
 
 @end
+

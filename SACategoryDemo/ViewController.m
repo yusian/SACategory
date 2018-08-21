@@ -24,7 +24,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.view sd_removeActivityIndicator];
     });
-    dispatch_queue_t queue = dispatch_queue_create("SSSS", DISPATCH_QUEUE_SERIAL);
 }
 
 @end
