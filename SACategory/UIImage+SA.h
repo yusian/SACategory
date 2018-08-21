@@ -37,7 +37,4 @@
 - (NSString *)base64Encoding;
 
 + (instancetype)imageWithCity:(NSString *)cityName font:(UIFont *)font;
-
-//+ (void)downloadWithURL:(NSString *)url complete:(SDWebImageDownloaderCompletedBlock)block showLoading:(BOOL)aBool;
-
 @end

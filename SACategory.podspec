@@ -133,7 +133,7 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "SDWebImage", "~> 4.4.2"
-  spec.dependency "Masonry"
+  spec.dependency "SDWebImage", "4.4.2"
+  spec.dependency "Masonry", "1.1.0"
 
 end

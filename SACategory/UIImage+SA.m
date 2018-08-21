@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+SA.h"
+#import "SDWebImageDownloader.h"
 
 #define kSAImageSize                    640
 #define kSAImageQuality                 0.5
@@ -230,13 +231,5 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     return image;
 }
-#warning 未实现上传
-//+ (void)downloadWithURL:(NSString *)url complete:(SDWebImageDownloaderCompletedBlock)block showLoading:(BOOL)aBool
-//{
-//    if (aBool) [SATool delay:0 withBlock:^{[SATool showLoadingMessage:@"请稍候..."];}];
-//    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageDownloaderLowPriority progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-//        if (aBool) [SATool delay:0 withBlock:^{[SATool hideLoading];}];
-//        block(image, data, error, finished);
-//    }];
-//}
+
 @end
