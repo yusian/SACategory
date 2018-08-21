@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SACategory"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "iOS开发实用分类集"
 
   # This description is used to generate tags and improve search results.
@@ -105,7 +105,7 @@ Pod::Spec.new do |spec|
   #  non-essential files like tests, examples and documentation.
   #
 
-  # spec.resource  = "icon.png"
+  spec.resource  = "sacategory.bundle"
   # spec.resources = "Resources/*.png"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
@@ -133,7 +133,7 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "SDWebImage", "4.4.2"
-  spec.dependency "Masonry", "1.1.0"
+  spec.dependency "Masonry"
+  spec.dependency "SDWebImage"
 
 end

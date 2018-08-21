@@ -1,14 +1,13 @@
 //
-//  SACategory.h
+//  NSObject+webView.h
 //  SACategory
 //
 //  Created by 余西安 on 2018/8/20.
 //  Copyright © 2018年 yusian. All rights reserved.
 //
 
-#ifndef SACategory_h
-#define SACategory_h
+#import <Foundation/Foundation.h>
 
-#import "NSArray+SA.h"
+@interface NSObject (webView)
 
-#endif /* SACategory_h */
+@end
