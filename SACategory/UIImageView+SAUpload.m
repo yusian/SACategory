@@ -47,7 +47,6 @@
     }
 }
 
-
 #pragma mark - Get方法
 - (NSURLSessionDataTask *)networkTask
 {
@@ -99,37 +98,4 @@
     view.frame = self.bounds;
     return view;
 }
-#warning 图片上传
-/// 上传照片
-//- (void)uploadWithSuccess:(SARequestSuccess)success
-//{
-//    NSDictionary *para = [SANetwork paraWithReqData:nil];
-//    NSData *data = UIImageJPEGRepresentation(self.image, kSAImageQuality);
-//    SABlockSelf blockself = self;
-//    self.uploadState = SAImageUploadStateUploading;
-//    self.networkTask = [SANetwork POST:kSAUploadJsonGetId para:para file:data success:^(id responseObject) {
-//        blockself.uploadState = SAImageUploadStateUploadSuccess;
-//        if (success) success(responseObject);
-//    }];
-//}
-
-//- (void)setNetworkTask:(NSURLSessionDataTask *)networkTask
-//{
-//    if (self.networkTask == nil){
-//        [SANotice addObserver:self selector:@selector(networkResponseError:) name:kSANoticeNetworkResponseError object:nil];
-//    }
-//    objc_setAssociatedObject(self, @selector(networkTask), networkTask, OBJC_ASSOCIATION_COPY_NONATOMIC);
-//}
-
-//- (void)networkResponseError:(NSNotification *)notification
-//{
-//    NSURLSessionDataTask *task = [(SANetworkNoticeObject *)notification.object task];
-//    if (self.networkTask != task) return;
-//    self.uploadState = SAImageUploadStateUploadFaile;
-//}
-
-//- (void)dealloc
-//{
-//    [NSNotificationCenter.defaultCenter removeObserver:self];
-//}
 @end

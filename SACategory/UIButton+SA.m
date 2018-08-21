@@ -8,6 +8,8 @@
 
 #import "UIButton+SA.h"
 #import "UIImage+SA.h"
+#import "UIImageView+SAUpload.h"
+#import "UIButton+WebCache.h"
 
 @implementation UIButton (SA)
 
@@ -31,17 +33,17 @@
     [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 
-//- (void)setImageUrl:(NSString *)urlStr placeholder:(NSString *)placeholder
-//{
-//    if (0 == urlStr.length || urlStr.imageFileID.length <= 1 || urlStr.isContainNull){
-//        [self setImage:[UIImage imageNamed:placeholder] forState:UIControlStateNormal];return;
-//    }
-//    self.imageView.uploadState = SAImageUploadStateUploading;
-//    [self sd_setImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:placeholder] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//        self.imageView.uploadState = SAImageUploadStateNormal;
-//        if (error) [self setImage:[UIImage imageNamed:@"image_loading_failure.png"] forState:UIControlStateNormal];
-//    }];
-//}
+- (void)setImageUrl:(NSString *)urlStr placeholder:(NSString *)placeholder
+{
+    if (0 == urlStr.length){
+        [self setImage:[UIImage imageNamed:placeholder] forState:UIControlStateNormal];return;
+    }
+    self.imageView.uploadState = SAImageUploadStateUploading;
+    [self sd_setImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:placeholder] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        self.imageView.uploadState = SAImageUploadStateNormal;
+        if (error) [self setImage:[UIImage imageNamed:@"image_loading_failure.png"] forState:UIControlStateNormal];
+    }];
+}
 
 + (id)buttonWithImage:(NSString *)imageName
 {

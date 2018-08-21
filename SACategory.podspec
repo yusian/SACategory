@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SACategory"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.3"
   spec.summary      = "iOS开发实用分类集"
 
   # This description is used to generate tags and improve search results.
@@ -40,7 +40,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.license      = "MIT (example)"
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,10 +91,10 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "SACategory", "SACategory/*.{h,m}"
+  spec.source_files  = "SACategory", "SACategory/**/*.{h,m}"
   spec.exclude_files = "SACategory/Exclude"
 
-  spec.public_header_files = "SACategory/*.h"
+  spec.public_header_files = "SACategory/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -133,6 +133,7 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  spec.dependency "SDWebImage", "~> 4.4.2"
+  spec.dependency "Masonry"
 
 end

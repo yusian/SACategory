@@ -25,9 +25,4 @@ typedef NS_ENUM(NSInteger, SAImageUploadState){
 
 @property (nonatomic, strong, readonly) UIImageView *stateIcon;
 
-@property (nonatomic, weak)   NSURLSessionDataTask  *networkTask;
-
-/// 上传照片
-//- (void)uploadWithSuccess:(SARequestSuccess)success;
-
 @end

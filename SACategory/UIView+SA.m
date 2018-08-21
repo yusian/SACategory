@@ -138,11 +138,10 @@
         label.textColor = SAColor(0x999999);
         label.font = [UIFont systemFontOfSize:15];
         label.textAlignment = NSTextAlignmentCenter;
-#warning MASConstraint
-//        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.center.equalTo(self);
-//            make.width.lessThanOrEqualTo(self).valueOffset(@(-10));
-//        }];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self);
+            make.width.lessThanOrEqualTo(self).valueOffset(@(-10));
+        }];
         objc_setAssociatedObject(self, @selector(showEmptyLabel), label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return objc_getAssociatedObject(self, @selector(showEmptyLabel));
