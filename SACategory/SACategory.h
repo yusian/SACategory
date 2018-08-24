@@ -10,6 +10,7 @@
 #define SACategory_h
 
 #import "NSArray+SA.h"
+#import "NSMutableArray+SA.h"
 #import "NSDate+SA.h"
 #import "NSDictionary+SA.h"
 #import "NSMutableDictionary+SA.h"

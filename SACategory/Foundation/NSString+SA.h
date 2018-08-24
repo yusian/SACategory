@@ -32,8 +32,9 @@
 
 + (NSString *)stringWithBase64String:(NSString *)string;
 
-+ (NSString *)JSONStringWithObject:(id)object;
-+ (NSString *)originalJSONStringWithObject:(id)object;
+// 字典转JSON
++ (NSString *)JSONStringWithObject:(NSDictionary <NSString *, NSString *>*)object;
++ (NSString *)originalJSONStringWithObject:(NSDictionary <NSString *, NSString *>*)object;
 
 + (NSString *)keyValueWithDict:(NSDictionary *)dict;
 

@@ -49,6 +49,7 @@
 + (NSString *)formateDate:(NSDate *)date formate:(NSString *)format
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:8*60*60];
     formatter.dateFormat = format;
     return [formatter stringFromDate:date];
 }

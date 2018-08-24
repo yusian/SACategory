@@ -96,13 +96,9 @@
     return [string deleteLastChar];
 }
 
-+ (NSString *)JSONStringWithObject:(NSDictionary *)object
++ (NSString *)JSONStringWithObject:(NSDictionary <NSString *, NSString *>*)object
 {
-    NSError *error;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:&error];
-    if (error) SALog(@"%@", error);
-    if (nil == data) return nil;
-    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *string = [self originalJSONStringWithObject:object];
     string = [string stringByReplacingOccurrencesOfString:@" " withString:@""];
     string = [string stringByReplacingOccurrencesOfString:@"\\" withString:@""];
     string = [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -110,14 +106,11 @@
     return string;
 }
 
-+ (NSString *)originalJSONStringWithObject:(id)object
++ (NSString *)originalJSONStringWithObject:(NSDictionary <NSString *, NSString *>*)object
 {
-    NSError *error;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:&error];
-    if (error) SALog(@"%@", error);
-    if (nil == data) return nil;
-    NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    return string;
+    if (object == nil) return nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:NULL];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 /// 字符串替换
 - (NSString *)replace:(NSString *)string1 with:(NSString *)string2
