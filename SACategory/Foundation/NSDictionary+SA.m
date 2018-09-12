@@ -35,12 +35,12 @@
     
     NSError *err;
     NSData *jsonData = [string dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
     if(err) {
         SALog(@"json解析失败：%@",err);
         return nil;
     }
-    return dic;
+    return [[self alloc] initWithDictionary:dict];
 }
 
 + (instancetype)dictionaryWithURLParas:(NSString *)URLParas

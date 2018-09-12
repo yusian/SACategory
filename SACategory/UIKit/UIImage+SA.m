@@ -231,5 +231,18 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     return image;
 }
-
++ (instancetype)imageWithRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii color:(UIColor *)color
+{
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    cornerRadii = CGSizeMake(cornerRadii.width * scale, cornerRadii.height * scale);
+    UIGraphicsBeginImageContextWithOptions(cornerRadii, false, scale);
+    UIBezierPath *bezier = [UIBezierPath bezierPathWithRoundedRect:(CGRect){CGPointZero,cornerRadii}
+                                                 byRoundingCorners:corners cornerRadii:cornerRadii];
+    [color setFill];
+    [bezier fill];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    CGFloat x = cornerRadii.width * 0.5;
+    CGFloat y = cornerRadii.height * 0.5;
+    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(y, x, y, x)];
+}
 @end

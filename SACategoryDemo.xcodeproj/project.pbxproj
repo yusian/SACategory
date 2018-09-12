@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57C5D5E20E89075B757EE987 /* Pods_SACategoryDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638F7A0F22D365D9D2E56323 /* Pods_SACategoryDemo.framework */; };
+		CC426FE5212FAB5E00BA00C1 /* NSObject+WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC426FE3212FAB5E00BA00C1 /* NSObject+WebView.m */; };
 		CC512708212A48E700F14348 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC512707212A48E700F14348 /* AppDelegate.m */; };
 		CC51270B212A48E700F14348 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC51270A212A48E700F14348 /* ViewController.m */; };
 		CC51270E212A48E700F14348 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC51270C212A48E700F14348 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		CC512713212A48E800F14348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC512711212A48E800F14348 /* LaunchScreen.storyboard */; };
 		CC512716212A48E800F14348 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC512715212A48E800F14348 /* main.m */; };
 		CC512777212A9DDB00F14348 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC512776212A9DDB00F14348 /* CoreGraphics.framework */; };
+		CCFA2FB62148E36000042E81 /* UISearchBar+SA.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA2FB52148E36000042E81 /* UISearchBar+SA.m */; };
 		CCFEF1B6212BB8A1004E2303 /* UIButton+SA.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFEF190212BB8A0004E2303 /* UIButton+SA.m */; };
 		CCFEF1B7212BB8A1004E2303 /* UIWebView+SA.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFEF198212BB8A0004E2303 /* UIWebView+SA.m */; };
 		CCFEF1B8212BB8A1004E2303 /* UIImageView+SAUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFEF199212BB8A0004E2303 /* UIImageView+SAUpload.m */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		638F7A0F22D365D9D2E56323 /* Pods_SACategoryDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SACategoryDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FB890B14D30083A42F9ADC /* Pods-SACategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SACategoryDemo.debug.xcconfig"; path = "Target Support Files/Pods-SACategoryDemo/Pods-SACategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		CC426FE3212FAB5E00BA00C1 /* NSObject+WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WebView.m"; sourceTree = "<group>"; };
+		CC426FE4212FAB5E00BA00C1 /* NSObject+WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WebView.h"; sourceTree = "<group>"; };
 		CC512703212A48E700F14348 /* SACategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SACategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC512706212A48E700F14348 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC512707212A48E700F14348 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		CC512714212A48E800F14348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC512715212A48E800F14348 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC512776212A9DDB00F14348 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CCFA2FB42148E36000042E81 /* UISearchBar+SA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+SA.h"; sourceTree = "<group>"; };
+		CCFA2FB52148E36000042E81 /* UISearchBar+SA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+SA.m"; sourceTree = "<group>"; };
 		CCFEF15F212B9B83004E2303 /* SAConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAConst.h; sourceTree = "<group>"; };
 		CCFEF16E212B9B83004E2303 /* SACategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SACategory.h; sourceTree = "<group>"; };
 		CCFEF18F212BB8A0004E2303 /* UIView+SA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SA.h"; sourceTree = "<group>"; };
@@ -195,6 +201,8 @@
 				CCFEF1A1212BB8A0004E2303 /* UIViewController+SA.m */,
 				CCFEF1A4212BB8A0004E2303 /* UIWebView+SA.h */,
 				CCFEF198212BB8A0004E2303 /* UIWebView+SA.m */,
+				CCFA2FB42148E36000042E81 /* UISearchBar+SA.h */,
+				CCFA2FB52148E36000042E81 /* UISearchBar+SA.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -214,6 +222,8 @@
 				CCFEF1A6212BB8A0004E2303 /* NSMutableDictionary+SA.m */,
 				CCFEF1AE212BB8A0004E2303 /* NSObject+SA.h */,
 				CCFEF1A8212BB8A0004E2303 /* NSObject+SA.m */,
+				CC426FE4212FAB5E00BA00C1 /* NSObject+WebView.h */,
+				CC426FE3212FAB5E00BA00C1 /* NSObject+WebView.m */,
 				CCFEF1B0212BB8A0004E2303 /* NSString+SA.h */,
 				CCFEF1A7212BB8A0004E2303 /* NSString+SA.m */,
 			);
@@ -351,6 +361,7 @@
 				CCFEF1BD212BB8A1004E2303 /* UIImage+SA.m in Sources */,
 				CCFEF1C3212BB8A1004E2303 /* NSObject+SA.m in Sources */,
 				CCFEF1C4212BB8A1004E2303 /* NSArray+SA.m in Sources */,
+				CC426FE5212FAB5E00BA00C1 /* NSObject+WebView.m in Sources */,
 				CC51270B212A48E700F14348 /* ViewController.m in Sources */,
 				CCFEF1BC212BB8A1004E2303 /* UIImageView+SA.m in Sources */,
 				CCFEF1B6212BB8A1004E2303 /* UIButton+SA.m in Sources */,
@@ -358,6 +369,7 @@
 				CCFEF1B9212BB8A1004E2303 /* UINavigationController+SA.m in Sources */,
 				CCFEF1BA212BB8A1004E2303 /* UILabel+SA.m in Sources */,
 				CCFEF1C7212BB8A1004E2303 /* NSMutableArray+SA.m in Sources */,
+				CCFA2FB62148E36000042E81 /* UISearchBar+SA.m in Sources */,
 				CCFEF1B8212BB8A1004E2303 /* UIImageView+SAUpload.m in Sources */,
 				CC512716212A48E800F14348 /* main.m in Sources */,
 				CCFEF1BB212BB8A1004E2303 /* UIView+SA.m in Sources */,

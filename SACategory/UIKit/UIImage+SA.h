@@ -37,4 +37,13 @@
 - (NSString *)base64Encoding;
 
 + (instancetype)imageWithCity:(NSString *)cityName font:(UIFont *)font;
+
+/**
+ 输出可拉伸的圆角图片
+ @param corners 四个圆角可自由指定
+ @param cornerRadii 圆角大小，以小的为准
+ @param color 图片颜色
+ @return image图片
+ */
++ (instancetype)imageWithRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii color:(UIColor *)color;
 @end
