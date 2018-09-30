@@ -20,4 +20,6 @@
 + (instancetype)dictionaryWithURLParas:(NSString *)URLParas;
 
 - (CLLocationCoordinate2D)toCoor;
+
+- (NSString *)toJSON;
 @end

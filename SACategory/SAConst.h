@@ -17,7 +17,8 @@
                                         alpha:1.0]
 // 自定义输出 SALog(...)
 #ifdef DEBUG
-#define SALog(FORMAT, ...) fprintf(stderr, "%s-%d行\t%s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
+//#define SALog(FORMAT, ...) fprintf(stderr, "%s-%d行\t%s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
+#define SALog(...) NSLog(@"%s-%d行:%@", __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
 #else
 #define SALog(...)
 #endif

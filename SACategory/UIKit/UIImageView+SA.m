@@ -24,7 +24,7 @@
         self.uploadState = SAImageUploadStateUploading;
         [self sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:placeImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             self.uploadState = SAImageUploadStateNormal;
-            if (error) self.image = [UIImage imageNamed:@"sacategory/image_loading_failure.png"];
+            if (error) self.image = [UIImage imageNamed:@"sacategory.bundle/image_loading_failure.png"];
         }];
     }
 }

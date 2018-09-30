@@ -34,14 +34,14 @@
             self.stateView.backgroundColor = [UIColor clearColor];
             [self.loading stopAnimating];
             self.stateIcon.hidden = NO;
-            self.stateIcon.image = [UIImage imageNamed:@"sacategory/icon_public_state_fail.png"];
+            self.stateIcon.image = [UIImage imageNamed:@"sacategory.bundle/icon_public_state_fail.png"];
         }break;
         case SAImageUploadStateUploadSuccess:{
             self.stateView.hidden = NO;
             self.stateView.backgroundColor = [UIColor clearColor];
             [self.loading stopAnimating];
             self.stateIcon.hidden = NO;
-            self.stateIcon.image = [UIImage imageNamed:@"sacategory/icon_public_state_success.png"];
+            self.stateIcon.image = [UIImage imageNamed:@"sacategory.bundle/icon_public_state_success.png"];
         }break;
         default:break;
     }

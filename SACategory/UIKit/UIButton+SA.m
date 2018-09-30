@@ -35,14 +35,16 @@
 
 - (void)setImageUrl:(NSString *)urlStr placeholder:(NSString *)placeholder
 {
+    UIImage *placeholderImage = (placeholder.length > 0) ? [UIImage imageNamed:placeholder] : UIImage.new;
     if (0 == urlStr.length){
-        [self setImage:[UIImage imageNamed:placeholder] forState:UIControlStateNormal];return;
+        [self setImage:placeholderImage forState:UIControlStateNormal];
+    }else{
+        self.imageView.uploadState = SAImageUploadStateUploading;
+        [self sd_setImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:placeholderImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            self.imageView.uploadState = SAImageUploadStateNormal;
+            if (error) [self setImage:[UIImage imageNamed:@"sacategory.bundle/image_loading_failure.png"] forState:UIControlStateNormal];
+        }];
     }
-    self.imageView.uploadState = SAImageUploadStateUploading;
-    [self sd_setImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:placeholder] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        self.imageView.uploadState = SAImageUploadStateNormal;
-        if (error) [self setImage:[UIImage imageNamed:@"sacategory/image_loading_failure.png"] forState:UIControlStateNormal];
-    }];
 }
 
 + (id)buttonWithImage:(NSString *)imageName

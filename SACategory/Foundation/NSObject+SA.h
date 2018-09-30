@@ -10,7 +10,8 @@
 
 @interface NSObject (SA)
 
-@property (nonatomic, strong)   NSObject    *object;
+@property (nonatomic, strong)   NSObject            *object;
+@property (nonatomic, copy)     dispatch_block_t    sa_block;
 
 - (void)performMethod:(NSString *)methodName withObject:(id)object;
 

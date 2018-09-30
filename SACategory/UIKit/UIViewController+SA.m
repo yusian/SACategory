@@ -8,6 +8,7 @@
 
 #import "UIViewController+SA.h"
 #import <objc/runtime.h>
+#import "NSObject+SA.h"
 
 @implementation UIViewController (SA)
 #pragma mark - 属性
@@ -63,5 +64,13 @@
         }
     }
     [taskArray addObject:task];
+}
+/// 函数去抖
+- (void)debounceDelay:(NSTimeInterval)delay block:(dispatch_block_t)block
+{
+    if (self.sa_block) dispatch_block_cancel(self.sa_block);
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC*delay);
+    dispatch_after(time, dispatch_get_main_queue(), block);
+    self.sa_block = block;
 }
 @end

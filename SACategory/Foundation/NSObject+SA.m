@@ -21,6 +21,16 @@
     return objc_getAssociatedObject(self, @selector(object));
 }
 
+- (void)setSa_block:(dispatch_block_t)sa_block
+{
+    objc_setAssociatedObject(self, @selector(sa_block), sa_block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (dispatch_block_t)sa_block
+{
+    return objc_getAssociatedObject(self, @selector(sa_block));
+}
+
 /// 动态方法调用
 - (void)performMethod:(NSString *)methodName withObject:(id)object
 {

@@ -26,21 +26,24 @@
 
 + (instancetype)backButtonWithTarget:(id)target action:(SEL)action
 {
-    UIImage *backImage = [UIImage imageNamed:@"sacategory/icon_navigation_back.png"];
+    UIImage *backImage = [UIImage imageNamed:@"sacategory.bundle/icon_navigation_back.png"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"返回" forState:UIControlStateNormal];
     [button setImage:backImage forState:UIControlStateNormal];
-    [button setBounds:CGRectMake(0, 0, 42, 28)];
-    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -2, 0, 0)];
-    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -9, 0, 0)];
+    [button setBounds:CGRectMake(0, 0, 46, 44)];
+    [button.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:17]];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -8, 0, 0)];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -8, 0, 0)];
     [button setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+    [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 + (instancetype)backIconWithTarget:(id)target action:(SEL)action
 {
-    UIImage *backImage = [UIImage imageNamed:@"sacategory/icon_navigation_back.png"];
+    UIImage *backImage = [UIImage imageNamed:@"sacategory.bundle/icon_navigation_back.png"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"返回" forState:UIControlStateNormal];
     button.tintColor = [UIColor whiteColor];

@@ -62,4 +62,10 @@
     CLLocationDegrees longitude = [[self sa_objectForKey:@"longitude"] doubleValue];
     return CLLocationCoordinate2DMake(latitude, longitude);
 }
+
+- (NSString *)toJSON
+{
+    NSData *data = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:NULL];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
 @end

@@ -10,7 +10,7 @@
 
 @implementation UISearchBar (SA)
 
-- (UITextField *)searchField
+- (UITextField *)sa_searchField
 {
     UITextField *searchField = nil;
     @try {

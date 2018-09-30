@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UISearchBar (SA)
-@property (nonatomic, strong, readonly)   UITextField *searchField;
+@property (nonatomic, strong, readonly)   UITextField *sa_searchField;
 @end
