@@ -26,6 +26,12 @@
 
 + (instancetype)backButtonWithTarget:(id)target action:(SEL)action
 {
+    UIButton *button = self.customBackButton;
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return [[UIBarButtonItem alloc] initWithCustomView:button];
+}
++ (UIButton *)customBackButton
+{
     UIImage *backImage = [UIImage imageNamed:@"sacategory.bundle/icon_navigation_back.png"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"返回" forState:UIControlStateNormal];
@@ -37,10 +43,8 @@
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, -8, 0, 0)];
     [button setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
     [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
-    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    return [[UIBarButtonItem alloc] initWithCustomView:button];
+    return button;
 }
-
 + (instancetype)backIconWithTarget:(id)target action:(SEL)action
 {
     UIImage *backImage = [UIImage imageNamed:@"sacategory.bundle/icon_navigation_back.png"];

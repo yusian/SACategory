@@ -27,4 +27,5 @@
 
 - (void)setFont:(UIFont *)font;
 
++ (UIButton *)customBackButton;
 @end
