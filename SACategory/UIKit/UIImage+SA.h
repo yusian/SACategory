@@ -36,7 +36,7 @@
 
 - (NSString *)base64Encoding;
 
-+ (instancetype)imageWithCity:(NSString *)cityName font:(UIFont *)font;
++ (instancetype)imageWithText:(NSString *)text font:(UIFont *)font;
 
 /**
  输出可拉伸的圆角图片

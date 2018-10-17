@@ -203,33 +203,16 @@
     return [data base64EncodedStringWithOptions:0];
 }
 
-+ (instancetype)imageWithCity:(NSString *)cityName font:(UIFont *)font
++ (instancetype)imageWithText:(NSString *)text font:(UIFont *)font;
 {
     NSDictionary *attributes = @{NSFontAttributeName:font, NSForegroundColorAttributeName:[UIColor whiteColor]};
-    CGSize fontSize = [cityName sizeWithAttributes:attributes];
-    CGFloat sideWidth = fontSize.height / 3;
-    CGSize contentSize = CGSizeMake(fontSize.width + sideWidth * 2 + 2, fontSize.height);
+    CGSize fontSize = [text sizeWithAttributes:attributes];
     
     // 开启指定大小的上下文
-    UIGraphicsBeginImageContextWithOptions(contentSize, NO, [[UIScreen mainScreen] scale]);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // 画文字
-    [cityName drawInRect:(CGRect){CGPointZero, fontSize} withAttributes:attributes];    // 文字渲染
-    
-    // 画箭头
-    CGContextSetLineWidth(context, 1.0);
-    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
-    CGPoint pArray[3];
-    CGFloat startX = fontSize.width + 1;    // 起始x位置
-    pArray[0] = CGPointMake(startX, sideWidth);
-    pArray[1] = CGPointMake(startX + sideWidth, sideWidth * 2);
-    pArray[2] = CGPointMake(startX + sideWidth * 2, sideWidth);
-    CGContextAddLines(context, pArray, 3);
-    CGContextDrawPath(context, kCGPathStroke);
-    
+    UIGraphicsBeginImageContextWithOptions(fontSize, NO, [[UIScreen mainScreen] scale]);
+    [text drawInRect:(CGRect){CGPointZero, fontSize} withAttributes:attributes];    // 文字渲染
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    return image;
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 + (instancetype)imageWithRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii color:(UIColor *)color
 {

@@ -67,6 +67,27 @@
     self.badgeView.sa_x = self.sa_width - self.badgeView.sa_width;
     self.badgeView.hidden = !aBool;
 }
+#pragma mark - 添加顶部|底部线条
+- (void)addTopLine
+{
+    UIView *line = UIView.new;
+    line.backgroundColor = SAColor(0xCCCCCC);
+    [self addSubview:line];
+    [line mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self);
+        make.height.equalTo(@0.5f);
+    }];
+}
+- (void)addBottomLine
+{
+    UIView *line = UIView.new;
+    line.backgroundColor = SAColor(0xCCCCCC);
+    [self addSubview:line];
+    [line mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self);
+        make.height.equalTo(@0.5f);
+    }];
+}
 
 - (CGFloat)sa_x
 {

@@ -15,6 +15,8 @@
 
 - (UILabel *)badgeView;
 - (void)showBadgeView:(BOOL)aBool;
+- (void)addTopLine;
+- (void)addBottomLine;
 
 @property (nonatomic, assign)   CGFloat sa_x;
 @property (nonatomic, assign)   CGFloat sa_y;
