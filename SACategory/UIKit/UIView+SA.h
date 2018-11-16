@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (SA)
+
+@property (nonatomic, assign)   CGFloat sa_x;
+@property (nonatomic, assign)   CGFloat sa_y;
+@property (nonatomic, assign)   CGPoint sa_origin;
+@property (nonatomic, assign)   CGFloat sa_width;
+@property (nonatomic, assign)   CGFloat sa_height;
+@property (nonatomic, strong)   UILabel     *showEmptyLabel;
+
 // 设置背景图片
 - (void)setBackground:(NSString *)imageName;
 - (void)subviewWithBlock:(void(^)(UIView *view))aBlock;
@@ -17,15 +25,9 @@
 - (void)showBadgeView:(BOOL)aBool;
 - (void)addTopLine;
 - (void)addBottomLine;
-
-@property (nonatomic, assign)   CGFloat sa_x;
-@property (nonatomic, assign)   CGFloat sa_y;
-@property (nonatomic, assign)   CGPoint sa_origin;
-@property (nonatomic, assign)   CGFloat sa_width;
-@property (nonatomic, assign)   CGFloat sa_height;
+- (UIViewController *)viewController;
 
 + (UIView *)zeroView;
 
-@property (nonatomic, strong)   UILabel     *showEmptyLabel;
 - (void)showEmpty:(BOOL)aBool text:(NSString *)text;
 @end
