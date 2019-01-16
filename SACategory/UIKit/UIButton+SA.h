@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^SAButtonActionBlock)(UIButton *button);
 
 @interface UIButton (SA)
 
@@ -26,4 +27,6 @@
 
 + (id)buttonWithImage:(NSString *)imageName;
 
+@property (nonatomic, copy)   SAButtonActionBlock     sa_actionBlock;
+- (void)actionWithBlock:(SAButtonActionBlock)block forControlEvents:(UIControlEvents)controlEvents;
 @end

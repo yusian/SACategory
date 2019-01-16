@@ -10,6 +10,7 @@
 #import "UIImage+SA.h"
 #import "UIImageView+SAUpload.h"
 #import "UIButton+WebCache.h"
+#import <objc/runtime.h>
 
 @implementation UIButton (SA)
 
@@ -31,6 +32,24 @@
 - (void)addTarget:(id)target action:(SEL)action
 {
     [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+}
+#pragma mark - actionWithBlock
+- (void)actionWithBlock:(SAButtonActionBlock)block forControlEvents:(UIControlEvents)controlEvents
+{
+    self.sa_actionBlock = block;
+    [self addTarget:self action:@selector(sa_categoryButtonEvent:) forControlEvents:controlEvents];
+}
+- (void)setSa_actionBlock:(SAButtonActionBlock)sa_actionBlock
+{
+    objc_setAssociatedObject(self, @selector(sa_actionBlock), sa_actionBlock, OBJC_ASSOCIATION_COPY);
+}
+- (SAButtonActionBlock)sa_actionBlock
+{
+    return objc_getAssociatedObject(self, @selector(sa_actionBlock));
+}
+- (void)sa_categoryButtonEvent:(UIButton *)button
+{
+    if (self.sa_actionBlock) self.sa_actionBlock(button);
 }
 
 - (void)setImageUrl:(NSString *)urlStr placeholder:(NSString *)placeholder
