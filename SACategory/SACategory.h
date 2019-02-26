@@ -28,4 +28,5 @@
 #import "UIView+SA.h"
 #import "UIViewController+SA.h"
 #import "UIWebView+SA.h"
+#import "UISearchBar+SA.h"
 #endif /* SACategory_h */
