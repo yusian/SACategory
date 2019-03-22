@@ -9,8 +9,8 @@
 #import "UIImage+SA.h"
 #import "SDWebImageDownloader.h"
 
-#define kSAImageSize                    640
-#define kSAImageQuality                 0.5
+#define kSAImageSize                    960
+#define kSAImageQuality                 0.6
 
 @implementation UIImage (SA)
 
@@ -199,8 +199,8 @@
 
 - (NSString *)base64Encoding
 {
-    NSData *data = UIImageJPEGRepresentation(self, 0.5);
-    return [data base64EncodedStringWithOptions:0];
+    NSData *data = UIImageJPEGRepresentation(self, kSAImageQuality);
+    return [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];
 }
 
 + (instancetype)imageWithText:(NSString *)text font:(UIFont *)font;

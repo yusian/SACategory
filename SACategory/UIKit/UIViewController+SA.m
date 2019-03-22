@@ -43,6 +43,16 @@
 {
     objc_setAssociatedObject(self, @selector(task), task, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+// 是否隐藏导航栏
+- (void)setNavBarHidden:(BOOL)navBarHidden
+{
+    objc_setAssociatedObject(self, @selector(isNavBarHidden), @(navBarHidden), OBJC_ASSOCIATION_ASSIGN);
+    [self.navigationController setNavigationBarHidden:navBarHidden animated:YES];
+}
+- (BOOL)isNavBarHidden
+{
+    return [objc_getAssociatedObject(self, @selector(isNavBarHidden)) boolValue];
+}
 
 #pragma mark - 方法
 /****************方法****************/

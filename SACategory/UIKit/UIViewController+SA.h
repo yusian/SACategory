@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) NSMutableArray        *taskArray;
 
+@property (nonatomic, assign, getter=isNavBarHidden)   BOOL     navBarHidden;
+
 - (void)removeFromNavigation;
 
 - (void)addTask:(NSURLSessionDataTask *)task;

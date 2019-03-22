@@ -161,7 +161,7 @@
         label.textAlignment = NSTextAlignmentCenter;
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
-            make.width.lessThanOrEqualTo(self).valueOffset(@(-10));
+            make.width.lessThanOrEqualTo(self).valueOffset(@(-10)).priorityLow();
         }];
         objc_setAssociatedObject(self, @selector(showEmptyLabel), label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
