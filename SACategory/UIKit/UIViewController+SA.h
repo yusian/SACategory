@@ -23,4 +23,6 @@
 - (void)addTask:(NSURLSessionDataTask *)task;
 
 - (void)debounceDelay:(NSTimeInterval)delay block:(dispatch_block_t)block;
+
++ (UIViewController *)topViewControllerWithRootViewController:(UIViewController*)rootViewController;
 @end

@@ -14,6 +14,8 @@
 - (id)sa_objectForKey:(id)aKey;
 
 + (instancetype)dictionaryWithCoor:(CLLocationCoordinate2D)coor;
+// Key小写
++ (instancetype)dictionaryWithLowCoor:(CLLocationCoordinate2D)coor;
 
 + (instancetype)dictionaryWithJSON:(NSString *)string;
 

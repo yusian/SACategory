@@ -83,4 +83,23 @@
     dispatch_after(time, dispatch_get_main_queue(), block);
     self.sa_block = block;
 }
+/// 获取当前活动控制器
++ (UIViewController*)topViewControllerWithRootViewController:(UIViewController*)rootViewController {
+    if ([rootViewController isKindOfClass:[UITabBarController class]]) {
+        
+        UITabBarController* tabBarController = (UITabBarController*)rootViewController;
+        return [self topViewControllerWithRootViewController:tabBarController.selectedViewController];
+    } else if (rootViewController.presentedViewController) {
+        
+        UIViewController* presentedViewController = rootViewController.presentedViewController;
+        return [self topViewControllerWithRootViewController:presentedViewController];
+    } else if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+        
+        UINavigationController* navigationController = (UINavigationController*)rootViewController;
+        return [self topViewControllerWithRootViewController:navigationController.visibleViewController];
+    } else {
+        
+        return rootViewController;
+    }
+}
 @end

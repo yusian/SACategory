@@ -29,6 +29,13 @@
     return @{@"Latitude" : latitude, @"Longitude" : longitude};
 }
 
++ (instancetype)dictionaryWithLowCoor:(CLLocationCoordinate2D)coor
+{
+    NSString *latitude = [NSString stringWithFormat:@"%f", coor.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f", coor.longitude];
+    return @{@"latitude" : latitude, @"longitude" : longitude};
+}
+
 + (instancetype)dictionaryWithJSON:(NSString *)string
 {
     if (string == nil || string.length == 0) return nil;
@@ -58,8 +65,12 @@
 
 - (CLLocationCoordinate2D)toCoor
 {
-    CLLocationDegrees latitude = [[self sa_objectForKey:@"latitude"] doubleValue];
-    CLLocationDegrees longitude = [[self sa_objectForKey:@"longitude"] doubleValue];
+    NSString *latitudeKey = @"latitude";
+    NSString *longitudeKey = @"longitude";
+    if ([self.allKeys containsObject:@"Latitude"]) latitudeKey = @"Latitude";
+    if ([self.allKeys containsObject:@"Longitude"]) longitudeKey = @"Longitude";
+    CLLocationDegrees latitude = [[self sa_objectForKey:latitudeKey] doubleValue];
+    CLLocationDegrees longitude = [[self sa_objectForKey:longitudeKey] doubleValue];
     return CLLocationCoordinate2DMake(latitude, longitude);
 }
 
