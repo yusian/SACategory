@@ -205,7 +205,11 @@
 
 + (instancetype)imageWithText:(NSString *)text font:(UIFont *)font;
 {
-    NSDictionary *attributes = @{NSFontAttributeName:font, NSForegroundColorAttributeName:[UIColor whiteColor]};
+    return [self imageWithText:text font:font color:UIColor.whiteColor];
+}
++ (instancetype)imageWithText:(NSString *)text font:(UIFont *)font color:(UIColor *)color;
+{
+    NSDictionary *attributes = @{NSFontAttributeName:font, NSForegroundColorAttributeName:color};
     CGSize fontSize = [text sizeWithAttributes:attributes];
     
     // 开启指定大小的上下文
@@ -214,6 +218,7 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     return [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
+
 + (instancetype)imageWithRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii color:(UIColor *)color
 {
     CGFloat scale = [[UIScreen mainScreen] scale];

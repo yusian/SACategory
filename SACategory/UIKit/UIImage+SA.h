@@ -38,6 +38,8 @@
 
 + (instancetype)imageWithText:(NSString *)text font:(UIFont *)font;
 
++ (instancetype)imageWithText:(NSString *)text font:(UIFont *)font color:(UIColor *)color;
+
 /**
  输出可拉伸的圆角图片
  @param corners 四个圆角可自由指定
