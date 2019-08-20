@@ -102,4 +102,19 @@
         return rootViewController;
     }
 }
+
++ (UIViewController *)currentViewController
+{
+    UIViewController *currentCtrl = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    currentCtrl = [self topViewControllerWithRootViewController:currentCtrl];
+    return currentCtrl;
+}
+
+- (void)dismissPresentedViewController
+{
+    if (self.presentedViewController) {
+        [self.presentedViewController dismissPresentedViewController];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
