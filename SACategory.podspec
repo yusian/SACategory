@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "SACategory"
-  spec.version      = "0.0.17"
+  spec.version      = "0.0.18"
   spec.summary      = "iOS开发实用分类集"
 
   # This description is used to generate tags and improve search results.
