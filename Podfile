@@ -1,6 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 platform :ios, '8.0'
+inhibit_all_warnings!
 
 target 'SACategoryDemo' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks

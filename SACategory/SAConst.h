@@ -28,5 +28,4 @@
 #define kSAAutoresizingMaskFloatY   UIViewAutoresizingFlexibleTopMargin  | UIViewAutoresizingFlexibleBottomMargin
 #define kSAAutoresizingMaskFloat    kSAAutoresizingMaskFloatX            | kSAAutoresizingMaskFloatY
 
-#import "Masonry.h"
 #endif /* SAConst_h */
