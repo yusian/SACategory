@@ -84,6 +84,9 @@
 
 + (NSString *)stringWithBase64String:(NSString *)string
 {
+    while (string.length % 4 > 0) {
+        string = [string appendStr:@"="];
+    }
     NSData *data = [[NSData alloc] initWithBase64EncodedString:string options:0];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
