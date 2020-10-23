@@ -96,7 +96,7 @@
     
     // 1.5、渲染背景色
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [[UIColor redColor] CGColor]);
+    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
     CGContextFillRect(context, subRect);
     
     // 2、将原图片渲染到上下文
