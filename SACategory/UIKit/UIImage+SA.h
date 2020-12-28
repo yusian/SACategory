@@ -48,4 +48,7 @@
  @return image图片
  */
 + (instancetype)imageWithRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii color:(UIColor *)color;
+
++ (instancetype)imageWithRoundingCorners:(UIRectCorner)corners size:(CGSize)size cornerRadii:(CGSize)cornerRadii color:(UIColor *)color;
+
 @end

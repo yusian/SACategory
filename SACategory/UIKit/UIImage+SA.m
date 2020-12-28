@@ -216,21 +216,30 @@
     UIGraphicsBeginImageContextWithOptions(fontSize, NO, [[UIScreen mainScreen] scale]);
     [text drawInRect:(CGRect){CGPointZero, fontSize} withAttributes:attributes];    // 文字渲染
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 + (instancetype)imageWithRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii color:(UIColor *)color
 {
     CGFloat scale = [[UIScreen mainScreen] scale];
-    cornerRadii = CGSizeMake(cornerRadii.width * scale, cornerRadii.height * scale);
-    UIGraphicsBeginImageContextWithOptions(cornerRadii, false, scale);
-    UIBezierPath *bezier = [UIBezierPath bezierPathWithRoundedRect:(CGRect){CGPointZero,cornerRadii}
-                                                 byRoundingCorners:corners cornerRadii:cornerRadii];
+    CGSize size = CGSizeMake(cornerRadii.width * scale, cornerRadii.height * scale);
+    return [self imageWithRoundingCorners:corners size:size cornerRadii:cornerRadii color:color];
+}
+
++ (instancetype)imageWithRoundingCorners:(UIRectCorner)corners size:(CGSize)size cornerRadii:(CGSize)cornerRadii color:(UIColor *)color
+{
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    UIGraphicsBeginImageContextWithOptions(size, false, scale);
+    UIBezierPath *bezier = [UIBezierPath bezierPathWithRoundedRect:(CGRect){CGPointZero, size} byRoundingCorners:corners cornerRadii:cornerRadii];
     [color setFill];
     [bezier fill];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    CGFloat x = cornerRadii.width * 0.5;
-    CGFloat y = cornerRadii.height * 0.5;
-    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(y, x, y, x)];
+    CGFloat x = size.width * 0.5;
+    CGFloat y = size.height * 0.5;
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(y, x, y, x)];
+    UIGraphicsEndImageContext();
+    return image;
 }
 @end
